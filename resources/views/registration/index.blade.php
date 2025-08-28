@@ -128,7 +128,7 @@
          </div>
 
          <div class="fv-row row mb-4">
-          <div class="col-md-3"><label class="form-label fs-7 required">Nama Pasien</label></div>
+          <div class="col-md-3"><label class="form-label fs-7 required">Nama Lengkap</label></div>
           <div class="col-md-9">
            {{ Form::text('name', null, ['class' => 'form-control form-control-solid form-control-sm req-input']) }}
           </div>

@@ -61,7 +61,19 @@ class ApiController extends Controller
     {
         try{
 
-            \App\Transaction::where('status', '0')->get();
+        $data = \App\Transaction::with(['patient'])->where('status', '0')
+                ->whereDate('created_time', now())
+                ->get();
+
+        if ($data->isEmpty()) {
+            return response()->json([
+                'message' => 'Tidak ada data transaksi',
+                'status'  => 404,
+                'data'    => null,
+            ]);
+        }
+
+        return response()->json(['message' => 'Data transaksi berhasil diambil', 'status' => 200, 'data' => $data]);
 
         }catch(\Exception $e){
             return $this->responseWithError(500, $e->getMessage());

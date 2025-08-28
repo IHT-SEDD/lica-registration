@@ -34,6 +34,11 @@ Route::middleware(['guest'])->group(function () {
         });
     });
 
+
+});
+
+Route::middleware(['apikey'])->group(function () {
+
        Route::prefix('api')->group(function () {
                Route::get('/transactions', 'ApiController@transactions');
        });

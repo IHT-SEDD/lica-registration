@@ -68,7 +68,7 @@ return [
     */
 
     'timezone' => env('APP_TIMEZONE', 'UTC'),
-    
+
 
     /*
     |--------------------------------------------------------------------------
@@ -121,6 +121,7 @@ return [
     */
 
     'key' => env('APP_KEY'),
+    'apikey' => env('API_KEY'),
     'activity_log' => env('APP_ACTIVITY_LOG'),
 
     'cipher' => 'AES-256-CBC',
