@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <!--begin::Head-->
-
 <head>
  <base href="{{ url('/') }}">
  <title>LICA - Formulir</title>
@@ -82,26 +81,26 @@
      <!--begin::Form-->
      {{-- <form class="form w-100" novalidate="novalidate" id="kt_sign_in_form"
       data-kt-redirect-url="../../demo1/dist/index.html" action="#"> --}}
-      {!! Form::open(['route' => 'login', 'method' => 'POST', 'class' => 'login-form
-      form-validate-jquery', 'id' => 'form-create']) !!}
+      {!! Form::open([ 'method' => 'POST', 'class' => 'form-validate-jquery', 'id' => 'form-create']) !!}
       <!--begin::Heading-->
       <div class="flex-column current" data-kt-stepper-element="content">
+        <label class="form-label fs-7 fst-italic">Cari data Pasien disini untuk mengecek data pasien</label>
        <div class="mb-4 row">
-        <div class="col-md-1 my-auto">
+        <div class="col-md-1 col-sm-2 my-auto">
          <label class="form-label fs-5">Cari</label>
         </div>
 
-        <div class="col-md-10">
+        <div class="col-md-10 col-10">
          <div class="input-group input-group-solid flex-nowrap">
           <span class="input-group-text"><i class="bi bi-person-circle fs-4"></i></span>
           <div class="overflow-hidden flex-grow-1">
            {{ Form::text('search_nik', null, ['class' => 'form-control form-control-solid rounded-0 border-start
-           select-two select-patient', 'placeholder' => 'NIK']) }}
+           select-two select-patient', 'id' => 'search_nik' ,'placeholder' => 'NIK']) }}
           </div>
          </div>
         </div>
 
-        <div class="col-md-1">
+        <div class="col-md-1 col-2">
          <button type="button" class="btn btn-primary" id="btn-search">
           <span class="indicator-label">
            <i class="bi bi-search"></i>
@@ -115,9 +114,9 @@
         <div class="col-md-6 patient-form">
 
          <div class="fv-row row mb-4">
-          <div class="col-md-3"><label class="form-label fs-7">NIK</label></div>
+          <div class="col-md-3"><label class="form-label fs-7 required">NIK</label></div>
           <div class="col-md-9">
-           {{ Form::text('nik', null, ['class' => 'form-control form-control-solid form-control-sm req-input']) }}
+           {{ Form::text('nik', null, ['class' => 'form-control form-control-solid form-control-sm req-input', 'id' => 'nik']) }}
           </div>
          </div>
 
@@ -129,7 +128,7 @@
          </div>
 
          <div class="fv-row row mb-4">
-          <div class="col-md-3"><label class="form-label fs-7">Nama Pasien</label></div>
+          <div class="col-md-3"><label class="form-label fs-7 required">Nama Pasien</label></div>
           <div class="col-md-9">
            {{ Form::text('name', null, ['class' => 'form-control form-control-solid form-control-sm req-input']) }}
           </div>
@@ -138,16 +137,14 @@
          <div class="fv-row row mb-4">
           <div class="col-md-3"><label class="form-label fs-7">Email</label></div>
           <div class="col-md-9">
-           {{ Form::text('email', null, ['class' => 'form-control form-control-solid form-control-sm', 'disabled',
-           'readonly']) }}
+           {{ Form::text('email', null, ['class' => 'form-control form-control-solid form-control-sm']) }}
           </div>
          </div>
 
          <div class="fv-row row mb-4">
-          <div class="col-md-3"><label class="form-label fs-7">No. HP</label></div>
+          <div class="col-md-3"><label class="form-label fs-7 required">No. HP</label></div>
           <div class="col-md-9">
-           {{ Form::text('phone', null, ['class' => 'form-control form-control-solid form-control-sm', 'disabled',
-           'readonly']) }}
+           {{ Form::text('phone', null, ['class' => 'form-control form-control-solid form-control-sm']) }}
           </div>
          </div>
          <!-- End Input -->
@@ -156,21 +153,20 @@
         <div class="col-md-6 patient-right-form">
 
          <div class="fv-row row mb-4">
-          <div class="col-md-3"><label class="form-label fs-7">Tanggal Lahir</label></div>
+          <div class="col-md-3"><label class="form-label fs-7 required">Tanggal Lahir</label></div>
           <div class="col-md-9">
            {{ Form::text('birthdate', null, ['class' => 'form-control form-control-solid form-control-sm birthdate
-           req-input', 'disabled', 'readonly']) }}
+           req-input']) }}
           </div>
          </div>
 
          <div class="fv-row row mb-4">
-          <div class="col-md-3"><label class="form-label fs-7">Jenis Kelamin</label></div>
+          <div class="col-md-3"><label class="form-label fs-7 required">Jenis Kelamin</label></div>
           <div class="col-md-9">
            <div class="row">
             <div class="col-4">
              <div class="form-check form-check-custom form-check-solid me-10">
-              {{ Form::radio('gender', 'M', null, ['class' => 'form-check-input h-15px w-15px', 'id' => 'radio-male',
-              'disabled', 'readonly']) }}
+              {{ Form::radio('gender', 'M', null, ['class' => 'form-check-input h-15px w-15px', 'id' => 'radio-male']) }}
               <label class="form-check-label mr-1" for="radio-male">
                Laki-laki
               </label>
@@ -178,8 +174,7 @@
             </div>
             <div class="col-4">
              <div class="form-check form-check-custom form-check-solid me-10">
-              {{ Form::radio('gender', 'F', null, ['class' => 'form-check-input h-15px w-15px', 'id' => 'radio-female',
-              'disabled', 'readonly']) }}
+              {{ Form::radio('gender', 'F', null, ['class' => 'form-check-input h-15px w-15px', 'id' => 'radio-female']) }}
               <label class="form-check-label" for="radio-female">
                Perempuan
               </label>
@@ -190,17 +185,16 @@
          </div>
 
          <div class="fv-row row mb-4">
-          <div class="col-md-3"><label class="form-label fs-7">Alamat</label></div>
+          <div class="col-md-3"><label class="form-label fs-7 required">Alamat</label></div>
           <div class="col-md-9">
-           {{ Form::textarea('address', null, ['class' => 'form-control form-control-solid form-control-sm', 'disabled',
-           'readonly', 'data-kt-autosize' => 'true', 'rows' => 3]) }}
+           {{ Form::textarea('address', null, ['class' => 'form-control form-control-solid form-control-sm', 'data-kt-autosize' => 'true', 'rows' => 3]) }}
           </div>
          </div>
 
          <!-- End Input -->
         </div>
        </div>
-       <button type="submit" class="btn btn-info" id="continue-btn" disabled>
+       <button type="submit" class="btn btn-info" id="btn-submit" >
         Submit
        </button>
       </div>
@@ -218,6 +212,7 @@
  <!--begin::Javascript-->
  <script>
   var hostUrl = "assets/";
+  var base = "{{ url('/') }}/";
  </script>
  <!--begin::Global Javascript Bundle(used by all pages)-->
  <script src="{{asset('metronic_assets/plugins/global/plugins.bundle.js')}}"></script>

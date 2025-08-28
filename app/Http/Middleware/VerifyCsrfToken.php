@@ -15,5 +15,6 @@ class VerifyCsrfToken extends Middleware
     'api/insert_patient',
     'interfacing-insert',
     'pre-analytics/datatable',
+      'form/check-nik'
   ];
 }

@@ -10,6 +10,7 @@ class Transaction extends Model
     protected $with = ['patient', 'room', 'insurance', 'doctor'];
     protected $fillable = [
         'patient_id',
+        'nik',
         'room_id',
         'doctor_id',
         'insurance_id',
@@ -83,7 +84,7 @@ class Transaction extends Model
 
     // public function transaction_tests()
     // {
-    //     // return 
+    //     // return
     //     return $this->hasMany('App\TransactionTest', 'transaction_id', 'id');
     // }
 }
