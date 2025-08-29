@@ -66,6 +66,9 @@ rulesFormValidation = {
     address: {
         required: true,
     },
+    type_patient: {
+        required: true,
+    },
 };
 
 (function () {
@@ -139,7 +142,10 @@ rulesFormValidation = {
                 },
                 address: {
                     required: 'Alamat wajib diisi'
-                }
+                },
+                type_patient: {
+                    required: 'Tujuan wajib diisi'
+                },
             },
             // submitHandler: function(form, event) {
             // }
@@ -202,7 +208,8 @@ rulesFormValidation = {
                     $('#form-create input[name="no_bpjs"]').val(data.no_bpjs);
                     $('#form-create input[name="email"]').val(data.email);
                     $('#form-create input[name="phone"]').val(data.phone);
-                  $('#form-create input[name="gender"][value="' + data.gender + '"]').prop('checked', true);
+                    $('#form-create input[name="gender"][value="' + data.gender + '"]').prop('checked', true);
+                    $('#form-create input[name="type_patient"][value="' + data.type_patient + '"]').prop('checked', true);
                     $('#form-create textarea[name="address"]').val(data.address);
                     $('#form-create input[name="birthdate"]').flatpickr().setDate(data.birthdate);
                 } else {

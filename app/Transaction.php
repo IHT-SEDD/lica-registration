@@ -12,6 +12,7 @@ class Transaction extends Model
         'patient_id',
         'nik',
         'room_id',
+        'type_patient',
         'doctor_id',
         'insurance_id',
         'analyzer_id',

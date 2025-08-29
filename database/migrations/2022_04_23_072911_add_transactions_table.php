@@ -18,6 +18,7 @@ class AddTransactionsTable extends Migration
             $table->unsignedBigInteger('patient_id');
             $table->foreign('patient_id')->references('id')->on('patients')->onDelete('cascade')->onUpdate('cascade');
             $table->string('nik');
+            $table->string('type_patient')->nullable();
             $table->date('created_time')->nullable();
             $table->integer('status')->nullable()->default(0);
             $table->timestamps();

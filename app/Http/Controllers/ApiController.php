@@ -80,4 +80,22 @@ class ApiController extends Controller
         }
     }
 
+        public function updateTransactions(Request $request)
+    {
+         try{
+
+             if($request['status'] == 200)
+            {
+                 \App\Transaction::whereIn('id', $request['lists'])->update(['status' => 1]);
+                return $this->successResponseUpdate();
+            }
+
+            return $this->responseWithError(500, 'Server Error');
+
+        }catch(\Exception $e){
+            return $this->responseWithError(500, $e->getMessage());
+        }
+
+    }
+
 }

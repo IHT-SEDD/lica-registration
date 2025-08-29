@@ -41,6 +41,7 @@ Route::middleware(['apikey'])->group(function () {
 
        Route::prefix('api')->group(function () {
                Route::get('/transactions', 'ApiController@transactions');
+                Route::put('/update-transactions', 'ApiController@updateTransactions');
        });
 
 });

@@ -42,7 +42,7 @@
    <!--begin::Content-->
    <div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
     <!--begin::Wrapper-->
-    <div class="d-flex flex-center p-10; w-lg-250px">
+    <div class="d-flex flex-center p-10; w-lg-300px">
      <table width="100%">
       <tr>
        <td style="width:100%;">
@@ -84,7 +84,7 @@
       {!! Form::open([ 'method' => 'POST', 'class' => 'form-validate-jquery', 'id' => 'form-create']) !!}
       <!--begin::Heading-->
       <div class="flex-column current" data-kt-stepper-element="content">
-        <label class="form-label fs-7 fst-italic">Cari data Pasien disini untuk mengecek data pasien</label>
+        <label class="form-label fs-7 fst-italic">Cari data Pasien disini</label>
        <div class="mb-4 row">
         <div class="col-md-1 col-sm-2 my-auto">
          <label class="form-label fs-5">Cari</label>
@@ -188,6 +188,30 @@
           <div class="col-md-3"><label class="form-label fs-7 required">Alamat</label></div>
           <div class="col-md-9">
            {{ Form::textarea('address', null, ['class' => 'form-control form-control-solid form-control-sm', 'data-kt-autosize' => 'true', 'rows' => 3]) }}
+          </div>
+         </div>
+
+        <div class="fv-row row mb-4">
+          <div class="col-md-3"><label class="form-label fs-7 required">Tujuan</label></div>
+          <div class="col-md-9">
+           <div class="row">
+            <div class="col-4">
+             <div class="form-check form-check-custom form-check-solid me-10">
+              {{ Form::radio('type_patient', 'Laboratorium', null, ['class' => 'form-check-input h-15px w-15px', 'id' => 'radio-laboratorium']) }}
+              <label class="form-check-label mr-1" for="radio-laboratorium">
+              Laboratorium
+              </label>
+             </div>
+            </div>
+            <div class="col-4">
+             <div class="form-check form-check-custom form-check-solid me-10">
+              {{ Form::radio('type_patient', 'Lingkungan', null, ['class' => 'form-check-input h-15px w-15px', 'id' => 'radio-lingkungan']) }}
+              <label class="form-check-label" for="radio-lingkungan">
+               Lingkungan
+              </label>
+             </div>
+            </div>
+           </div>
           </div>
          </div>
 
